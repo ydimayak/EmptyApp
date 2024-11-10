@@ -11,11 +11,9 @@ jobs:
     name: Build release apk
     runs-on: ubuntu-latest
 
-  steps:
-    - uses: actions/checkout@v4
-
-    - name: Run a one-line script
-      run: echo Hello
+    steps:
+      - name: Run a one-line script
+        run: echo Hello
 
 #, ${{ job.name }}!
 #        #    - uses: actions/checkout@v4
