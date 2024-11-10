@@ -7,22 +7,38 @@ on:
 #      - "*"
 
 jobs:
+  Hello:
+    name: Say Hello
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Print job name
+        run: |
+          echo "JOB: github.job: ${{ github.job }}!"
+
+      - name: Run a multiline script
+        run: |
+          echo "Hello, github.job: ${{ github.job }}!"
+
   Build-release:
     name: Build release apk
     runs-on: ubuntu-latest
 
     steps:
-      - name: Run a one-line script
+      - name: Print job name
         run: |
-          echo "Hello, github.jobs[github.job].name: ${{ github.jobs[github.job].name }}!"
-          echo "Hello, github.job: ${{ github.job }}!"
-          echo "Hello, $GITHUB_JOB: $GITHUB_JOB"
+          echo "JOB: github.job: ${{ github.job }}!"
+          
+      - uses: actions/checkout@v4
 
-#        #    - uses: actions/checkout@v4
-#
-#    - uses: actions/setup-java@v4
-#      with:
-#        java-version: 17
-#        distribution: 'temurin'
-#        cache: gradle
+      - uses: actions/setup-java@v4
+        with:
+          java-version: 17
+          distribution: 'temurin'
+          cache: gradle
+
+
+      
+      
+
 
