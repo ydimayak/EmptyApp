@@ -1,0 +1,25 @@
+name: CD release
+
+on:
+  push:
+    branches: [ "main" ]
+    tags:
+      - *
+
+jobs:
+  Build-release:
+    name: Build release apk
+    runs-on: ubuntu-latest
+
+  steps:
+    - name: Run a one-line script
+      run: echo Hello, ${{ job.name }}!
+
+        #    - uses: actions/checkout@v4
+#
+#    - uses: actions/setup-java@v4
+#      with:
+#        java-version: 17
+#        distribution: 'temurin'
+#        cache: gradle
+

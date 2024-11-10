@@ -12,6 +12,6 @@ public class MySimpleTest {
     @Test
     public void multiply_isCorrect() {
         assertEquals(6, 2 * 3);
-        assertNotEquals(6, 2 * 3);
+        assertNotEquals(5, 2 * 3);
     }
 }
